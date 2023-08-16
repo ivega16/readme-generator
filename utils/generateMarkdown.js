@@ -1,5 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+
 function renderLicenseBadge(license) {}
 
 // TODO: Create a function that returns the license link
@@ -14,7 +15,51 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ${renderLicenseBadge(data)}
+
+  ## Description
+  
+  ${data.description}
+  
+  ## Table of Contents (Optional)
+  
+  If your README is long, add a table of contents to make it easy for users to find what they need.
+  
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  
+  ## Installation
+  
+  ${data.installation}
+  
+  ## Usage
+  
+ ${data.usage}
+  
+  
+  ## License
+  
+${renderLicenseSection(data)}  
+  
+
+  
+  ## Contribution
+  
+${data.contribution}  
+
+  ## Tests
+  
+${data.tests}
+
+##Questions
+<ul>
+  <li> <a href="https://github.com/${data.username}">Github Profile </a> </li>
+  <li> <a href="mailto:${data.email}">Email Me </a> </li>
+
 `;
+
 }
 
 module.exports = generateMarkdown;

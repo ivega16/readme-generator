@@ -44,6 +44,7 @@ jspm_packages/
 
 #package lock basically locks the version so if it locks the version it makes the functionality still work when we upgrade later on
 package-lock.json
+.DS_Store
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
