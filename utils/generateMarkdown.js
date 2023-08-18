@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 
 function renderLicenseBadge(license) {
-  if(license === "MIT License") {
+  if (license === "MIT License") {
     return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
   }
   else if (license === "No License") {
@@ -19,7 +19,7 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if(license === "MIT License") {
+  if (license === "MIT License") {
     return `https://opensource.org/license/mit/`
   }
   else if (license === "No License") {
@@ -36,7 +36,7 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if(license === "MIT License") {
+  if (license === "MIT License") {
     return `THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
   }
   else if (license === "No License") {
@@ -62,7 +62,6 @@ function generateMarkdown(data) {
   
   ## Table of Contents (Optional)
   
-  
   - [Installation](#installation)
   - [Usage](#usage)
   - [Credits](#credits)
@@ -74,31 +73,30 @@ function generateMarkdown(data) {
   
   ## Usage
   
- ${data.usage}
+  ${data.usage}
   
   
   ## License
   
-${renderLicenseSection(data.license)}  
+  ${renderLicenseSection(data.license)}  
   
 
   
   ## Contribution
   
-${data.contribution}  
+  ${data.contribution}  
 
   ## Tests
   
-${data.tests}
+  ${data.tests}
 
-## Questions
+  ## Questions
+
   <ul>
-      <li> <a href="https://github.com/${data.username}">Github Profile </a> </li>
-      <li> <a href="mailto:${data.email}">Email Me </a> </li>
+    <li> <a href="https://github.com/${data.username}">Github Profile </a> </li>
+    <li> <a href="mailto:${data.email}">Email Me </a> </li>
   </ul>
-
 `;
-
 }
 
 module.exports = generateMarkdown;
