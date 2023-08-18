@@ -40,7 +40,7 @@ const questions = [
         type: "input"
     },
     {
-        name: "constribution",
+        name: "contribution",
         message: "What are the contribution guidelines?",
         type: "input"
     },
@@ -53,7 +53,7 @@ const questions = [
         name: "license",
         message: "Choose a license from this list:",
         type: "list",
-        choices:["Mozilla Public License 2.0", "Eclipse Public License 2.0", "MIT License", "Apache 2.0 License", "No License"]
+        choices:["Eclipse Public License 2.0", "MIT License", "Apache 2.0 License", "No License"]
     },
     {
         name: "username",
@@ -69,7 +69,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeToFile(fileName, generateMarkdown(data), err =>{
+    fs.writeFile(fileName, generateMarkdown(data), err =>{
         if(err) throw err
         console.log("success")
     })
@@ -78,7 +78,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then((data) => {
+    .then(data => {
         writeToFile("./output/README.md", data)
     })
 }
